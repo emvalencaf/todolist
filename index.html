@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+    
+        <h1 class="title">todo list</h1>
+        <button id="btn-toggleTheme" class="btn"><i class="fa-solid fa-sun-bright"></i></button>
+    
+    </header>
+    
+    <main>
+
+        <section class="todo-app">
+
+            <form class="form" data-form="search">
+            
+                <input type="text" class="input" placeholder="search a todo by typing it's name"><i class="fa-solid fa-magnifying-glass"></i>
+            
+            </form>
+            
+            <form class="form" data-form="register">
+            
+                <input type="text" class="input" placeholder="register a todo">
+                <button class="btn"><i class="fa-solid fa-pen-to-square"></i></button>
+            
+            </form>
+            <div class="todo-list-card-container">
+            
+                <ul class="todo-list-container">
+            
+                    <li class="todo"><i class="fa-solid fa-check"></i>
+                        fazer um novo projeto de javascript<i class="fa-solid fa-trash"></i><i class="fa-solid fa-pen-to-square"></i>
+                    </li class="todo">
+                    <li class="todo">
+                        fazer um novo projto de html/css
+                    </li>
+                    <li class="todo">
+                        olá, mundo!
+                    </li>
+            
+                </ul>
+            
+            </div>
+        
+        </section>
+    
+    </main>
+    
+    <footer>
+        <p>
+            &copy; 2022, Edson Mota Valença
+        </p>
+    </footer>
+    <script src="./src/js/index.js" type="module"></script>
+</body>
+</html>
