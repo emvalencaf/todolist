@@ -12,8 +12,12 @@
 <body>
     <header>
     
-        <h1 class="title">todo list</h1>
-        <button id="btn-toggleTheme" class="btn"><i class="fa-solid fa-sun-bright"></i></button>
+        <div>
+            <h1 class="title">todo list</h1>
+            <button id="btn-toggleTheme" class="btn">
+                <abbr title="mudar o tema para escuro/luminoso"><i class="fa-solid fa-moon"></i></abbr>
+            </button>
+        </div>
     
     </header>
     
@@ -23,30 +27,80 @@
 
             <form class="form" data-form="search">
             
-                <input type="text" class="input" placeholder="search a todo by typing it's name"><i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="input" placeholder="digite para procurar uma tarefa">
+                
             
             </form>
             
             <form class="form" data-form="register">
             
-                <input type="text" class="input" placeholder="register a todo">
-                <button class="btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                <input type="text" class="input" placeholder="registre uma nova tarefa">
+                <button class="btn"><abbr title="clique para registrar uma nova tarefa"><i class="fa-solid fa-pen-to-square"></i></abbr></button>
             
             </form>
             <div class="todo-list-card-container">
             
                 <ul class="todo-list-container">
-            
-                    <li class="todo"><i class="fa-solid fa-check"></i>
-                        fazer um novo projeto de javascript<i class="fa-solid fa-trash"></i><i class="fa-solid fa-pen-to-square"></i>
-                    </li class="todo">
-                    <li class="todo">
-                        fazer um novo projto de html/css
-                    </li>
-                    <li class="todo">
-                        olá, mundo!
-                    </li>
-            
+                    <div class="todo">
+                        <button class="btn">
+                            <abbr title="clique para marcar a tarefa como concluída ou não concluída"><i class="fa-regular fa-circle-check"></i></abbr>
+                        </button>
+                        <li>
+                            <input type="text" value="Estudar Javascript" class="input" disabled>
+                        </li>
+                        <div>
+                            <button class="btn">
+                                <abbr title="clique para editar/salvar tarefa">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </abbr>
+                            </button>
+                            <button class="btn">
+                                <abbr title="clique para deletar tarefa">
+                                    <i class="fa-solid fa-trash"></i>
+                                </abbr>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="todo">
+                        <button class="btn">
+                            <abbr title="clique para marcar a tarefa como concluída ou não concluída"><i class="fa-regular fa-circle-check"></i></abbr>
+                        </button>
+                        <li>
+                            <input type="text" value="Estudar HTML" class="input" disabled>
+                        </li>
+                        <div>
+                            <button class="btn">
+                                <abbr title="clique para editar/salvar tarefa">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </abbr>
+                            </button>
+                            <button class="btn">
+                                <abbr title="clique para deletar tarefa">
+                                    <i class="fa-solid fa-trash"></i>
+                                </abbr>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="todo">
+                        <button class="btn">
+                            <abbr title="clique para marcar a tarefa como concluída ou não concluída"><i class="fa-regular fa-circle"></i></abbr>
+                        </button>
+                        <li>
+                            <input type="text" value="Estudar CSS" class="input" disabled>
+                        </li>
+                        <div>
+                            <button class="btn">
+                                <abbr title="clique para editar/salvar tarefa">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </abbr>
+                            </button>
+                            <button class="btn">
+                                <abbr title="clique para deletar tarefa">
+                                    <i class="fa-solid fa-trash"></i>
+                                </abbr>
+                            </button>
+                        </div>
+                    </div>
                 </ul>
             
             </div>
@@ -54,11 +108,15 @@
         </section>
     
     </main>
-    
     <footer>
         <p>
-            &copy; 2022, Edson Mota Valença
+            &copy; 2022, Edson Mota Valença Filho
         </p>
+        <div>
+            <abbr title="Minha página no Github"><a href="https://github.com/emvalencaf" target="_blank" rel="external"><i class="fa-brands fa-square-github fa-2xl"></i></a></abbr>
+            <abbr title="Minha página no LinkedIn"><a href="https://www.linkedin.com/in/emvalencaf/" target="_blank" rel="external"><i class="fa-brands fa-linkedin fa-2xl"></i></a></abbr>
+            <abbr title="Meu portfólio"><a href="https://emvalenca-portfolio.herokuapp.com/" target="_blank" rel="external"><i class="fa-solid fa-address-card fa-2xl"></i></a></abbr>
+        </div>
     </footer>
     <script src="./src/js/index.js" type="module"></script>
 </body>
