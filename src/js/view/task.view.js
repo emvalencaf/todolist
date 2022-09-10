@@ -15,6 +15,25 @@ class TaskView{
 
         })
     }
+
+    onClick(){
+        document.querySelector("#btn-toggleTheme").addEventListener("click", e => {
+
+            const body = document.body
+
+            if(body.classList.contains('lightmode')){
+
+                body.classList.replace('lightmode', 'darkmode')
+                e.currentTarget.querySelector("i").classList.replace('fa-moon', 'fa-sun')
+
+            } else{
+
+                body.classList.replace('darkmode','lightmode')
+                e.currentTarget.querySelector("i").classList.replace('fa-sun', 'fa-moon')
+
+            }
+        })
+    }
 }
 
 export const taskView = new TaskView(document.querySelector(".todo-list-container"), document.querySelectorAll("form"))

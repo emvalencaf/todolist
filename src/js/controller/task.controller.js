@@ -7,6 +7,7 @@ class TaskController{
         this.service = service
 
         this.onSubmit()
+        this.onClick()
     }
 
     onSubmit(){
@@ -17,6 +18,10 @@ class TaskController{
         }
 
         this.view.onSubmit(cb)
+    }
+
+    onClick(){
+        this.view.onClick()
     }
 
     addTask(evt){
