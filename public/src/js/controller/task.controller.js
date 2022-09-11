@@ -24,16 +24,28 @@ class TaskController{
         this.view.onClick()
     }
 
-    addTask(evt){
+    async addTask(evt){
         evt.preventDefault()
         const input = evt.currentTarget.querySelector("input")
 
-        if(!input.value) throw new Error("you must fill the title's field")
+        try{
 
-        if(this.service.tasks.length >= 5) return alert('Nessa versão só é possível adicionar até 5 tarefas')
+            if(!input.value) throw new Error("you must fill the title's field")
+    
+            if(input.value.length > 150) throw new Error("title cannot exceed 150 character")
 
-        this.service.addTask(input.value)
-        this.view.renderTasks(this.service.tasks)
+            await this.service.addTask(input.value)
+            this.view.renderTasks(this.service.tasks)
+
+        } catch(e){
+            
+            console.log(e)
+
+        }
+
+
+        //if(this.service.tasks.length >= 5) return alert('Nessa versão só é possível adicionar até 5 tarefas')
+
 
         evt.currentTarget.reset()
 
