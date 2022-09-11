@@ -34,6 +34,15 @@ class TaskService{
         }
     }
 
+    searchByTaskName(taskName){
+        
+        if(this.#_tasks.length === 0) return
+
+        return this.#_tasks.filter(task => {
+            if(task.title.indexOf(taskName) > - 1) return task
+        })
+    }
+
     editTask(id, value){
         const taskIndex = this.searchTaskById(id)
         const currentTask = this.#_tasks[taskIndex]

@@ -14,7 +14,7 @@ class TaskController{
 
         const cb = {
             register: this.addTask.bind(this),
-            search: this.searchTask.bind(this)
+            search: this.searchByTaskName.bind(this)
         }
 
         this.view.onSubmit(cb)
@@ -32,6 +32,9 @@ class TaskController{
 
         this.service.addTask(input.value)
         this.view.renderTasks(this.service.tasks)
+
+        evt.currentTarget.reset()
+
     }
 
     toggleComplete(id){
@@ -49,8 +52,15 @@ class TaskController{
         this.view.renderTasks(this.service.tasks)
     }
 
-    searchTask(){
-        console.log("search task")
+    searchByTaskName(evt){
+
+        console.log(evt.currentTarget)
+        const tasks = this.service.searchByTaskName(evt.currentTarget.value)
+
+        if(!tasks || tasks.length === 0) return
+
+        this.view.renderTasks(tasks)
+
     }
 }
 

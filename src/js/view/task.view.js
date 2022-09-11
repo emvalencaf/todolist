@@ -11,7 +11,7 @@ class TaskView{
 
             const formType = form.getAttribute('data-form')
 
-            if(formType === "search") return form.querySelector("input").addEventListener('keydown', cb[formType])
+            if(formType === "search") return form.querySelector("input").addEventListener('keyup', cb[formType])
 
             form.addEventListener('submit', cb[formType])
 
