@@ -30,6 +30,8 @@ class TaskController{
 
         if(!input.value) throw new Error("you must fill the title's field")
 
+        if(this.service.tasks.length >= 5) return alert('Nessa versão só é possível adicionar até 5 tarefas')
+
         this.service.addTask(input.value)
         this.view.renderTasks(this.service.tasks)
 
