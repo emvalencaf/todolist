@@ -1,3 +1,4 @@
+import { createFetch } from "../createFetch.js"
 import { TaskModel } from "../model/task.model.js"
 
 
@@ -13,9 +14,30 @@ class TaskService{
     }
 
     addTask(title){
+        /*
         const newTask = new TaskModel(title, this.#_tasks.length)
         console.log(newTask)
-        this.#_tasks.push(newTask)
+        this.#_tasks.push(newTask)*/
+
+        createFetch("POST", `${urlTasks}`, JSON.stringify(new TaskModel(title)))
+            .then( () => this.getTasks(userId))
+
+    }
+
+    async getTasks(){
+
+        const fn = (arrTask) => {
+            this.tasks = arrTask.map(task => {
+                const {title, completed, completedAt, createdAt, updatedAt, _id, userId} = task
+
+                return new TaskModel(title, _id, completed, completedAt, createdAt,updatedAt, userId)
+
+            })
+        }
+
+        return await createFetch('GET', `${urlTasks}`)
+            .then(response => fn(response))
+
     }
 
     searchTaskById(id){
