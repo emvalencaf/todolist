@@ -44,6 +44,11 @@ class TaskController{
         this.view.renderTasks(this.service.tasks)
     }
 
+    deleteTask(id){
+        this.service.deleteTask(id)
+        this.view.renderTasks(this.service.tasks)
+    }
+
     searchTask(){
         console.log("search task")
     }

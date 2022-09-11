@@ -42,6 +42,15 @@ class TaskService{
 
         currentTask.updatedAt = Date.now()
     }
+
+    deleteTask(id){
+        const taskIndex = this.searchTaskById(id)
+
+        this.#_tasks.splice(taskIndex, 1)
+
+        console.log(this.#_tasks)
+
+    }
 }
 
 export const taskService = new TaskService()

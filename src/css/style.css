@@ -146,6 +146,14 @@ main{
     border-radius: 10px;
 }
 
+.todo:first-child{
+    border-radius: 10px 10px 0px 0px;
+}
+
+.todo:last-child{
+    border-radius: 0px 0px 10px 10px;
+}
+
 .todo{
     display: flex;
     justify-content: space-between;
@@ -155,6 +163,10 @@ main{
 
 .todo:nth-last-child(1){
     border-bottom: none;
+}
+
+.todo.sucess{
+    background-color: rgba(152, 208, 152, 0.778);
 }
 
 .todo .input{

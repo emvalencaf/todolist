@@ -41,7 +41,9 @@ class TaskView{
 
         const handle = {
             completed: e =>{
+
                 taskController.toggleComplete(btn.parentElement.dataset.taskId)
+
             },
             edit: e =>{
 
@@ -58,6 +60,11 @@ class TaskView{
 
                 currentInput.disabled = !currentInput.disabled
 
+            },
+            delete: e => {
+                const currentTodo = btn.parentElement.parentElement
+                
+                taskController.deleteTask(currentTodo.dataset.taskId)
             }
 
         }
@@ -95,6 +102,8 @@ class TaskView{
                 </button>
             </div>
             `
+            if(task.completed) div.classList.add("sucess")
+
             this.containerEl.appendChild(div)
 
             const btns = [...div.querySelectorAll('button')]
@@ -104,9 +113,6 @@ class TaskView{
         })
     }
 
-    completedTasks(taskId){
-
-    }
 }
 /*
 
