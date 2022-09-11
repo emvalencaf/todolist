@@ -31,6 +31,17 @@ class TaskController{
         if(!input.value) throw new Error("you must fill the title's field")
 
         this.service.addTask(input.value)
+        this.view.renderTasks(this.service.tasks)
+    }
+
+    toggleComplete(id){
+        this.service.toggleComplete(id)
+        this.view.renderTasks(this.service.tasks)
+    }
+
+    editTask(id, value){
+        this.service.editTask(id, value)
+        this.view.renderTasks(this.service.tasks)
     }
 
     searchTask(){

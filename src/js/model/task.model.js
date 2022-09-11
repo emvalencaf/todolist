@@ -5,8 +5,8 @@ export class TaskModel{
     #_updatedAt
     #_completedAt
 
-
-    constructor(title, completed, userID){
+    constructor(title, id, completed, userID){
+        this.id = id.toString()
         this.title = title
         this.completed = completed || false
         this.#_userID = userID
@@ -15,4 +15,19 @@ export class TaskModel{
         this.#_completedAt = null
     }
 
+    get updatedAt(){
+        return this.#_updatedAt
+    }
+
+    get completedAt(){
+        return this.#_completedAt
+    }
+
+    set completedAt(date){
+        return this.#_completedAt = date
+    }
+
+    set updatedAt(date){
+        return this.#_updatedAt = date
+    }
 }

@@ -159,6 +159,17 @@ main{
 
 .todo .input{
     width: 450px;
+
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.todo .input:disabled{
+    background-color: transparent;
+}
+
+.todo .input{
+    background-color: white;
 }
 
 .todo div{
